@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  /* Dark Botanical Base Palette */
+  --color-obsidian: #0A0D0A;
+  --color-pine: #111611;
+  --color-card-dark: #161D16;
+  --color-card-elevated: #1A231A;
+  --color-card-border: rgba(74, 222, 128, 0.15);
+  --color-gold-border: rgba(250, 204, 21, 0.2);
+
+  /* Botanical Greens */
+  --color-sprout: #4ADE80;
+  --color-emerald: #22C55E;
+  --color-sage: #86EFAC;
+  --color-forest-deep: #14532D;
+
+  /* Golden Accents */
+  --color-honey: #FACC15;
+  --color-amber-gold: #F59E0B;
+  --color-warm-sun: #FEF08A;
+
+  /* Typography */
+  --color-text-primary: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0A0D0A;
+  color: #F8FAFC;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-display);
+}
+
+/* Dark Botanical Card Container */
+.botanical-card {
+  background: linear-gradient(180deg, #161D16 0%, #111611 100%);
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(74, 222, 128, 0.05);
+  border-radius: 1.5rem;
+}
+
+.botanical-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.botanical-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(74, 222, 128, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px -4px rgba(74, 222, 128, 0.12);
+}
+
+/* Gold Accented Card */
+.gold-card {
+  background: linear-gradient(180deg, #1A1E14 0%, #12140D 100%);
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(250, 204, 21, 0.08);
+  border-radius: 1.5rem;
+}
+
+/* Hand-Drawn Doodle Golden Underline */
+.doodle-underline-gold {
+  position: relative;
+  display: inline-block;
+}
+.doodle-underline-gold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M2 12 Q 25 2, 50 12 T 98 10' stroke='%23FACC15' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Radar Pulse for AI Badges */
+@keyframes radarWave {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.radar-wave {
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 2px solid #4ADE80;
+  animation: radarWave 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  pointer-events: none;
+}
+
+/* Dark Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0D0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2B1E;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4ADE80;
+}
+
+/* Glassmorphism Navigation */
+.glass-sidebar {
+  background: rgba(17, 22, 17, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(74, 222, 128, 0.12);
+}
+
+.glass-bottom-bar {
+  background: rgba(17, 22, 17, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(74, 222, 128, 0.15);
+}
